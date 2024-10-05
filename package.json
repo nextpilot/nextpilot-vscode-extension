@@ -1,23 +1,78 @@
 {
   "name": "nextpilot-vscode-extension",
   "displayName": "NextPilot VScode Extension",
-  "description": "",
+  "description": "An integrated development environment for NextPilot",
+  "license": "BSD-3-Clause",
   "version": "0.0.1",
+  "icon": "assets/logo.jpg",
+  "homepage": "https://www.nextpilot.org",
+  "keywords": [
+    "nextpilot",
+    "rt-thread",
+    "pixhawk",
+    "stm32"
+  ],
   "engines": {
     "vscode": "^1.94.0"
+  },
+  "publisher": "NextPilot",
+  "author": {
+    "name": "NextPilot Development Team"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nextpilot/nextpilot-vscode-extension"
+  },
+  "bugs": {
+    "url": "https://github.com/nextpilot/nextpilot-vscode-extension/issues"
   },
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onCommand::nextpilot.sayHello",
+    // "workspaceContains:**/rtconfig.h"
+
+  ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "nextpilot-vscode-extension.helloWorld",
+        "command": "nextpilot.sayHello",
         "title": "Hello World"
       }
-    ]
+    ],
+    "viewsContainers": {
+      "activitybar": [ {
+          "id": "nextpilot-explorer",
+          "title": "NextPilot",
+          "icon": "assets/logo.jpg"
+        } ]
+    },
+    "views": {
+      "nextpilot-explorer": {
+        "id": "nextpilot-explorer.ProjectTasks",
+        "name": "Project Tasks",
+        "type": "tree",
+      }
+    },
+    "viewsWelcome": [
+      "view": "nextpilot-explorer.ProjectTasks",
+      "contents": "You have not yet opened a NextPilot project"
+
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "NextPilot VScode Extension",
+      "properties": {
+        "nextpilot.ToolchainInstallLocation": {
+          "type": "string",
+          "scope": "resource",
+          "markdownDescription": "nextpilot toolchain install directory [`example: c:/nextpilot-windows-toolchain`]",
+          "default": "c:/nextpilot-windows-toolchain"
+        }
+      }
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",

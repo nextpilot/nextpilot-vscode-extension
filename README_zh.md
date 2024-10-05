@@ -2,6 +2,8 @@
 
 ## 开发指南
 
+请参照：<https://rackar.github.io/vscode-ext-doccn/>
+
 切换到国内NPM镜像源
 
 ```shell
