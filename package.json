@@ -31,8 +31,7 @@
   ],
   "activationEvents": [
     "onCommand::nextpilot.sayHello",
-    // "workspaceContains:**/rtconfig.h"
-
+    "workspaceContains:**/rtconfig.h"
   ],
   "main": "./out/extension.js",
   "contributes": {
@@ -40,26 +39,44 @@
       {
         "command": "nextpilot.sayHello",
         "title": "Hello World"
+      },
+      {
+        "command": "nextpilot.project.refresh",
+        "title": "refresh",
+        "icon": {
+          "light": "",
+          "dark": ""
+        }
       }
     ],
     "viewsContainers": {
-      "activitybar": [ {
+      "activitybar": [
+        {
           "id": "nextpilot-explorer",
           "title": "NextPilot",
           "icon": "assets/logo.jpg"
-        } ]
+        }
+      ]
     },
     "views": {
-      "nextpilot-explorer": {
-        "id": "nextpilot-explorer.ProjectTasks",
-        "name": "Project Tasks",
-        "type": "tree",
-      }
+      "nextpilot-explorer": [
+        {
+          "id": "nextpilot-explorer.ProjectTasks",
+          "name": "Project Tasks",
+          "type": "tree"
+        },
+        {
+          "id": "nextpilot-explorer.QuickAccess",
+          "name": "Quick Access",
+          "type": "tree"
+        }
+      ]
     },
     "viewsWelcome": [
-      "view": "nextpilot-explorer.ProjectTasks",
-      "contents": "You have not yet opened a NextPilot project"
-
+      {
+        "view": "nextpilot-explorer.ProjectTasks",
+        "contents": "No NextPilot project have opened.\nYou can open a existing NextPilot Project (a folder contains [rtconfig.h](https://github.com/nextpilot) file). \n [Pick a Folder](command:workbench.action.files.openFolder)\nYou can create a new NextPilot Project or explore examples using NextPilot Home.\n[Create New Project](command)"
+      }
     ],
     "configuration": {
       "type": "object",
