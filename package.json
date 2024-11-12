@@ -42,12 +42,21 @@
         "title": "Hello World"
       },
       {
+        "command":"nextpilot.showHome",
+        "title": "Show Home"
+      },
+      {
         "command": "nextpilot.project.refresh",
         "title": "refresh",
         "icon": {
           "light": "",
           "dark": ""
         }
+      },
+      {
+        "command": "nextpilot.project.build",
+        "title":"Build"
+
       }
     ],
     "viewsContainers": {
@@ -79,6 +88,10 @@
         "contents": "No NextPilot project have opened.\nYou can open a existing NextPilot Project (a folder contains [rtconfig.h](https://github.com/nextpilot) file). \n [Pick a Folder](command:workbench.action.files.openFolder)\nYou can create a new NextPilot Project or explore examples using NextPilot Home.\n[Create New Project](command)"
       }
     ],
+    "keybindings":{
+      "command": "nextpilot.project.build",
+      "key": "ctr+shift+b"
+    },
     "configuration": {
       "type": "object",
       "title": "NextPilot VScode Extension",

@@ -10,5 +10,6 @@
 	"typescript.tsc.autoDetect": "off",
 	"i18n-ally.localesPaths": [
 		"D:/nextpilot/nextpilot-vscode-extension"
-	]
+	],
+	"RTT_Studio.Build.Parallel_Jobs": "20"
 }
