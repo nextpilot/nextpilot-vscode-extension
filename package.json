@@ -31,7 +31,8 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand::nextpilot.sayHello",
+    "onCommand:nextpilot.sayHello",
+    "onCommand:nextpilot.showHome",
     "workspaceContains:**/rtconfig.h"
   ],
   "main": "./out/extension.js",
@@ -39,11 +40,11 @@
     "commands": [
       {
         "command": "nextpilot.sayHello",
-        "title": "Hello World"
+        "title": "NextPilot: Hello World"
       },
       {
         "command":"nextpilot.showHome",
-        "title": "Show Home"
+        "title": "NextPilot: Show Home"
       },
       {
         "command": "nextpilot.project.refresh",

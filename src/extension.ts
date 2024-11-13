@@ -23,6 +23,13 @@ export function activate(context: vscode.ExtensionContext) {
 	});
 
 	context.subscriptions.push(disposable);
+
+
+	const disposable1 = vscode.commands.registerCommand('nextpilot.showHome', () => {
+		vscode.window.showInformationMessage('show home from NextPilot');
+	});
+
+	context.subscriptions.push(disposable1);
 }
 
 // This method is called when your extension is deactivated
